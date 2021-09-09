@@ -1,7 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  const [toggle, setToggle] = useState(false);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +20,14 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={() => setToggle((prev) => (prev = !prev))}>
+          Toggle Me
+        </button>
+        {toggle ? (
+          <p style={{ margin: "0" }}>Yes</p>
+        ) : (
+          <p style={{ margin: "0" }}>No</p>
+        )}
       </header>
     </div>
   );
